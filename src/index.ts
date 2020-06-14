@@ -68,7 +68,6 @@ Date.prototype.format = function (pattern: string): string {
         case "a/c":
           return hours / 12 > 1 ? "오후" : "오전";
         case "E":
-          console.log(day);
           return weekNames[day];
         default:
           return match;
