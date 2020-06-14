@@ -7,7 +7,7 @@ function logging(testCase: any, testValue: any, passingValue: any): void {
 }
 
 describe("Date format test", () => {
-  const testDate = new Date("2020/01/02 00:01:02");
+  const testDate = new Date("2020/01/02 13:01:02");
 
   const testCases = [
     {
@@ -36,11 +36,19 @@ describe("Date format test", () => {
     },
     {
       pattern: "HH",
-      passingValue: "00",
+      passingValue: "13",
     },
     {
       pattern: "H",
-      passingValue: "0",
+      passingValue: "13",
+    },
+    {
+      pattern: "hh",
+      passingValue: "01",
+    },
+    {
+      pattern: "h",
+      passingValue: "1",
     },
     {
       pattern: "mm",
@@ -60,7 +68,7 @@ describe("Date format test", () => {
     },
     {
       pattern: "a/c",
-      passingValue: "오전",
+      passingValue: "오후",
     },
     {
       pattern: "E",
@@ -68,7 +76,7 @@ describe("Date format test", () => {
     },
     {
       pattern: "yyyy-MM-dd HH:mm:ss a/c E",
-      passingValue: "2020-01-02 00:01:02 오전 목",
+      passingValue: "2020-01-02 13:01:02 오후 목",
     },
   ];
 
