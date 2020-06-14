@@ -5,7 +5,7 @@ function logging(testCase, testValue, passingValue) {
     console.log("[" + testCase + "] \n\ttest with '" + testValue + "'. \n\tthis should be '" + passingValue + "'");
 }
 describe("Date format test", function () {
-    var testDate = new Date("2020/01/02 00:01:02");
+    var testDate = new Date("2020/01/02 13:01:02");
     var testCases = [
         {
             pattern: "yyyy",
@@ -33,11 +33,19 @@ describe("Date format test", function () {
         },
         {
             pattern: "HH",
-            passingValue: "00",
+            passingValue: "13",
         },
         {
             pattern: "H",
-            passingValue: "0",
+            passingValue: "13",
+        },
+        {
+            pattern: "hh",
+            passingValue: "01",
+        },
+        {
+            pattern: "h",
+            passingValue: "1",
         },
         {
             pattern: "mm",
@@ -57,7 +65,7 @@ describe("Date format test", function () {
         },
         {
             pattern: "a/c",
-            passingValue: "오전",
+            passingValue: "오후",
         },
         {
             pattern: "E",
@@ -65,7 +73,7 @@ describe("Date format test", function () {
         },
         {
             pattern: "yyyy-MM-dd HH:mm:ss a/c E",
-            passingValue: "2020-01-02 00:01:02 오전 목",
+            passingValue: "2020-01-02 13:01:02 오후 목",
         },
     ];
     testCases.forEach(function (testCase) {

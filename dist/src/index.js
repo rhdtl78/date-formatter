@@ -19,7 +19,7 @@ Date.prototype.format = function (pattern) {
     var seconds = currentDate.getSeconds();
     var day = currentDate.getDay();
     var weekNames = ["일", "월", "화", "수", "목", "금", "토"];
-    return pattern.replace(/yyyy|yy|MM|M|dd|d|HH|H|mm|m|ss|s|a\/c|E/g, function (match) {
+    return pattern.replace(/yyyy|yy|MM|M|dd|d|HH|H|hh|h|mm|m|ss|s|a\/c|E/g, function (match) {
         switch (match) {
             case "yyyy":
                 return year.toString();
@@ -37,6 +37,10 @@ Date.prototype.format = function (pattern) {
                 return hours.zeroPad(2);
             case "H":
                 return hours.toString();
+            case "hh":
+                return (hours % 12 ? hours % 12 : 12).zeroPad(2);
+            case "h":
+                return (hours % 12 ? parseInt(String(hours % 12)) : 12).toString();
             case "mm":
                 return minutes.zeroPad(2);
             case "m":
